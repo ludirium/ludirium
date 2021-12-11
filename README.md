@@ -1,10 +1,11 @@
-Ludirium Core integration/staging tree
+:coin: Ludirium
 =====================================
+![Docker Automated build](https://img.shields.io/docker/automated/ludirium/ludirium?label=version&logo=0.22&logoColor=green&style=plastic)
 
-https://ludiriumcore.org
+https://ludirium.com
 
 For an immediately usable, binary version of the Ludirium Core software, see
-https://ludiriumcore.org/en/download/.
+https://ludirium.com/download/.
 
 Further information about Ludirium Core is available in the [doc folder](/doc).
 
