@@ -10,10 +10,10 @@
 
 #ifdef WIN32
 #include <windows.h>    // for SetStdinEcho()
-#include <io.h>         // for ikenty()
+#include <io.h>         // for isatty()
 #else
 #include <termios.h>    // for SetStdinEcho()
-#include <unistd.h>     // for SetStdinEcho(), ikenty()
+#include <unistd.h>     // for SetStdinEcho(), isatty()
 #include <poll.h>       // for StdinReady()
 #endif
 
@@ -47,9 +47,9 @@ void SetStdinEcho(bool enable)
 bool StdinTerminal()
 {
 #ifdef WIN32
-    return _ikenty(_fileno(stdin));
+    return _isatty(_fileno(stdin));
 #else
-    return ikenty(fileno(stdin));
+    return isatty(fileno(stdin));
 #endif
 }
 

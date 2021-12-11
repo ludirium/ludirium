@@ -186,7 +186,7 @@ def main():
     args = parser.parse_args()
     capturepaths = [Path.cwd() / Path(capturepath) for capturepath in args.capturepaths]
     output = Path.cwd() / Path(args.output) if args.output else False
-    use_progress_bar = (not args.no_progress_bar) and sys.stdout.ikenty()
+    use_progress_bar = (not args.no_progress_bar) and sys.stdout.isatty()
 
     messages = []   # type: List[Any]
     if use_progress_bar:

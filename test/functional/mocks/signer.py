@@ -90,7 +90,7 @@ parser_signtx.add_argument('psbt', metavar='psbt')
 
 parser_signtx.set_defaults(func=signtx)
 
-if not sys.stdin.ikenty():
+if not sys.stdin.isatty():
     buffer = sys.stdin.read()
     if buffer and buffer.rstrip() != "":
        sys.argv.extend(buffer.rstrip().split(" "))
