@@ -71,8 +71,8 @@ public:
         //consensus.BIP65Height = 388381; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
         //consensus.BIP66Height = 363725; // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
         consensus.CSVHeight = 1; // 000000000000000004a1b34462cb8aeebd5799177f7a29cf28f2d1961716b5b5
-        consensus.SegwitHeight = 481824; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
-        consensus.MinBIP9WarningHeight = 483840; // segwit activation height + miner confirmation window
+        consensus.SegwitHeight = 0; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
+        consensus.MinBIP9WarningHeight = 0; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 1 * 60;
@@ -136,11 +136,11 @@ public:
         m_is_mockable_chain = false;
 
         checkpointData = {
-            /* tbu
+           
             {
-                { 0, uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f")},
+                { 0, uint256S("0x000009a14abda1ee17b8da66cf900a53624cd5993d35cdb0e2bb2a7791ef88f1")},
             }
-            */
+            
         };
 
         m_assumeutxo_data = MapAssumeutxo{
@@ -172,8 +172,8 @@ public:
         //consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         //consensus.BIP66Height = 330776; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
         consensus.CSVHeight = 0; // 00000000025e930139bac5c6c31a403776da130831ab85be56578f3fa75369bb
-        consensus.SegwitHeight = 834624; // 00000000002b980fcd729daaa248fd9316a5200e9b367f4ff2c42453e84201ca
-        consensus.MinBIP9WarningHeight = 836640; // segwit activation height + miner confirmation window
+        consensus.SegwitHeight = 0; // 00000000002b980fcd729daaa248fd9316a5200e9b367f4ff2c42453e84201ca
+        consensus.MinBIP9WarningHeight = 0; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 1 * 60;
@@ -230,11 +230,11 @@ public:
         m_is_mockable_chain = false;
 
         checkpointData = {
-            /* tbu
+            
             {
-                {0, uint256S("000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943")},
+                {0, uint256S("0000029f182240217e19ea7d586fde594717f74bbb07edfbb5ea8e9122be75bb")},
             }
-            */
+            
         };
 
         m_assumeutxo_data = MapAssumeutxo{
@@ -422,11 +422,11 @@ public:
         m_is_mockable_chain = true;
 
         checkpointData = {
-            /* tbu
+           
             {
-                {0, uint256S("0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206")},
+                {0, uint256S("0000023ef882b7f7ab707a19ed155e1522a8df5fcf14f47ca4373a0e1401437a")},
             }
-            */
+            
         };
 
         m_assumeutxo_data = MapAssumeutxo{
