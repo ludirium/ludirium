@@ -1,0 +1,93 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/ludirium/.ludirium" ]; then
+	LUDIRIUMD_DEFAULT_DATADIR="/var/lib/ludirium/.ludirium"
+else
+	LUDIRIUMD_DEFAULT_DATADIR="/var/lib/ludiriumd"
+fi
+
+LUDIRIUMD_CONFIGFILE=${LUDIRIUMD_CONFIGFILE:-/etc/ludirium/ludirium.conf}
+LUDIRIUMD_PIDDIR=${LUDIRIUMD_PIDDIR:-/var/run/ludiriumd}
+LUDIRIUMD_PIDFILE=${LUDIRIUMD_PIDFILE:-${LUDIRIUMD_PIDDIR}/ludiriumd.pid}
+LUDIRIUMD_DATADIR=${LUDIRIUMD_DATADIR:-${LUDIRIUMD_DEFAULT_DATADIR}}
+LUDIRIUMD_USER=${LUDIRIUMD_USER:-${LUDIRIUM_USER:-ludirium}}
+LUDIRIUMD_GROUP=${LUDIRIUMD_GROUP:-ludirium}
+LUDIRIUMD_BIN=${LUDIRIUMD_BIN:-/usr/bin/ludiriumd}
+LUDIRIUMD_NICE=${LUDIRIUMD_NICE:-${NICELEVEL:-0}}
+LUDIRIUMD_OPTS="${LUDIRIUMD_OPTS:-${LUDIRIUM_OPTS}}"
+
+name="Ludirium Core Daemon"
+description="Ludirium cryptocurrency P2P network daemon"
+
+command="/usr/bin/ludiriumd"
+command_args="-pid=\"${LUDIRIUMD_PIDFILE}\" \
+		-conf=\"${LUDIRIUMD_CONFIGFILE}\" \
+		-datadir=\"${LUDIRIUMD_DATADIR}\" \
+		-daemon \
+		${LUDIRIUMD_OPTS}"
+
+required_files="${LUDIRIUMD_CONFIGFILE}"
+start_stop_daemon_args="-u ${LUDIRIUMD_USER} \
+			-N ${LUDIRIUMD_NICE} -w 2000"
+pidfile="${LUDIRIUMD_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${LUDIRIUMD_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${LUDIRIUMD_USER}:${LUDIRIUMD_GROUP}" \
+	"${LUDIRIUMD_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${LUDIRIUMD_USER}:${LUDIRIUMD_GROUP}" \
+	"${LUDIRIUMD_PIDDIR}"
+
+	checkpath -f \
+	-o "${LUDIRIUMD_USER}:${LUDIRIUMD_GROUP}" \
+	-m 0660 \
+	"${LUDIRIUMD_CONFIGFILE}"
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if grep -qs '^rpcuser=' "${LUDIRIUMD_CONFIGFILE}" && \
+		! grep -qs '^rpcpassword=' "${LUDIRIUMD_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run ludiriumd."
+		eerror "The setting must appear in ${LUDIRIUMD_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Ludirium Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

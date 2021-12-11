@@ -1,0 +1,37 @@
+// Copyright (c) 2009-2010 Kenshin Nakamoto
+// Copyright (c) 2009-2020 The Ludirium Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#ifndef LUDIRIUM_WALLET_LOAD_H
+#define LUDIRIUM_WALLET_LOAD_H
+
+#include <string>
+#include <vector>
+
+class ArgsManager;
+class CScheduler;
+
+namespace interfaces {
+class Chain;
+} // namespace interfaces
+
+//! Responsible for reading and validating the -wallet arguments and verifying the wallet database.
+bool VerifyWallets(interfaces::Chain& chain);
+
+//! Load wallet databases.
+bool LoadWallets(interfaces::Chain& chain);
+
+//! Complete startup of wallets.
+void StartWallets(CScheduler& scheduler, const ArgsManager& args);
+
+//! Flush all wallets in preparation for shutdown.
+void FlushWallets();
+
+//! Stop all wallets. Wallets will be flushed first.
+void StopWallets();
+
+//! Close all wallets.
+void UnloadWallets();
+
+#endif // LUDIRIUM_WALLET_LOAD_H

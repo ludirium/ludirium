@@ -1,0 +1,33 @@
+# /etc/conf.d/ludiriumd: config file for /etc/init.d/ludiriumd
+
+# Config file location
+#LUDIRIUMD_CONFIGFILE="/etc/ludirium/ludirium.conf"
+
+# What directory to write pidfile to?  (created and owned by $LUDIRIUMD_USER)
+#LUDIRIUMD_PIDDIR="/var/run/ludiriumd"
+
+# What filename to give the pidfile
+#LUDIRIUMD_PIDFILE="${LUDIRIUMD_PIDDIR}/ludiriumd.pid"
+
+# Where to write ludiriumd data (be mindful that the blockchain is large)
+#LUDIRIUMD_DATADIR="/var/lib/ludiriumd"
+
+# User and group to own ludiriumd process
+#LUDIRIUMD_USER="ludirium"
+#LUDIRIUMD_GROUP="ludirium"
+
+# Path to ludiriumd executable
+#LUDIRIUMD_BIN="/usr/bin/ludiriumd"
+
+# Nice value to run ludiriumd under
+#LUDIRIUMD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#LUDIRIUMD_OPTS=""
+
+# The timeout in seconds OpenRC will wait for ludiriumd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+LUDIRIUMD_SIGTERM_TIMEOUT=600
