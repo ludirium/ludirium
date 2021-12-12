@@ -100,7 +100,7 @@ void ModalOverlay::tipUpdate(int count, const QDateTime& blockDate, double nVeri
         double progressPerHour = 0;
         qint64 timeDelta = 0;
         qint64 remainingMSecs = 0;
-        double remainingProgress = 1.0 - n;
+        double remainingProgress = 1.0 - nVerificationProgress;
         for (int i = 1; i < blockProcessTime.size(); i++) {
             QPair<qint64, double> sample = blockProcessTime[i];
 
