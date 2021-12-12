@@ -65,7 +65,7 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 2100000;
-        consensus.BIP16Exception = uint256S("0x000007f0cc1b22e44f2ed2def741cd91e92d58eea4e19b3a0f6233ac85057bc2");
+        consensus.BIP16Exception = uint256S("0x276628328e622c65742860f7f9011f9ba5375dc76a2a6260b852965101293fac");
         //consensus.BIP34Height = 227931;
         //consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         //consensus.BIP65Height = 388381; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
@@ -111,11 +111,11 @@ public:
         genesis = CreateGenesisBlock(1639256431, 698225, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         
-        //assert(consensus.hashGenesisBlock == uint256S("0x000007f0cc1b22e44f2ed2def741cd91e92d58eea4e19b3a0f6233ac85057bc2"));
+        assert(consensus.hashGenesisBlock == uint256S("0x276628328e622c65742860f7f9011f9ba5375dc76a2a6260b852965101293fac"));
         
-        printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
-        //assert(genesis.hashMerkleRoot == uint256S("0x760ab62236a77f63929544effdcbb0aea3c336abb8ef91fb3b6b4c3fceaaceb4"));
-        printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
+        //printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
+        assert(genesis.hashMerkleRoot == uint256S("0xf3d31a5c686b2d9bae272940c5cbd324115f3c9727166c141b3ee37bbeb86549"));
+        //printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
@@ -141,7 +141,7 @@ public:
         checkpointData = {
            
             {
-                { 0, uint256S("0x000007f0cc1b22e44f2ed2def741cd91e92d58eea4e19b3a0f6233ac85057bc2")},
+                { 0, uint256S("0x276628328e622c65742860f7f9011f9ba5375dc76a2a6260b852965101293fac")},
             }
             
         };
@@ -169,7 +169,7 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 2100000;
-        consensus.BIP16Exception = uint256S("0x00000b027c5e6923bb60dc691209ae6e9c9afc08a6a911b54ea9a88d193a78ec ");
+        consensus.BIP16Exception = uint256S("0x666b2cfe74ba8b2e0f0c25605c7f0b98235eab2e7b3dae05fefe7e0d3ea92870");
         //consensus.BIP34Height = 21111;
         //consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8");
         //consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
@@ -209,10 +209,10 @@ public:
 
         genesis = CreateGenesisBlock(1639256431, 1206657, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        //assert(consensus.hashGenesisBlock == uint256S("0x00000b027c5e6923bb60dc691209ae6e9c9afc08a6a911b54ea9a88d193a78ec "));
-         printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
-        //assert(genesis.hashMerkleRoot == uint256S("0x760ab62236a77f63929544effdcbb0aea3c336abb8ef91fb3b6b4c3fceaaceb4"));
-        printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
+        assert(consensus.hashGenesisBlock == uint256S("0x666b2cfe74ba8b2e0f0c25605c7f0b98235eab2e7b3dae05fefe7e0d3ea92870"));
+        //printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
+        assert(genesis.hashMerkleRoot == uint256S("0xf3d31a5c686b2d9bae272940c5cbd324115f3c9727166c141b3ee37bbeb86549"));
+        //printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -237,7 +237,7 @@ public:
         checkpointData = {
             
             {
-                {0, uint256S("00000b027c5e6923bb60dc691209ae6e9c9afc08a6a911b54ea9a88d193a78ec")},
+                {0, uint256S("666b2cfe74ba8b2e0f0c25605c7f0b98235eab2e7b3dae05fefe7e0d3ea92870")},
             }
             
         };
@@ -342,10 +342,10 @@ public:
 
         genesis = CreateGenesisBlock(1639256431, 305900, 0x1e0377ae, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        //assert(consensus.hashGenesisBlock == uint256S("0x000003d30288c412e1995e1ac5bb79d8a472f86ade21b5b586017e55a01de915"));
-        printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
-        //assert(genesis.hashMerkleRoot == uint256S("0x760ab62236a77f63929544effdcbb0aea3c336abb8ef91fb3b6b4c3fceaaceb4"));
-        printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
+        assert(consensus.hashGenesisBlock == uint256S("0xf3c923409d35d30ccc008b6d68fd63dc9e5f58b1c15066f0f3e856aefb51f330"));
+        //printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
+        assert(genesis.hashMerkleRoot == uint256S("0xf3d31a5c686b2d9bae272940c5cbd324115f3c9727166c141b3ee37bbeb86549"));
+        //printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
 
         vFixedSeeds.clear();
 
@@ -417,10 +417,10 @@ public:
 
         genesis = CreateGenesisBlock(1639256431, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        //assert(consensus.hashGenesisBlock == uint256S("0xb0347ea7ef13414c5c39a0f8c6f903b11b29c2d26645501cd4dc2954289ab82b"));
-        printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
-        //assert(genesis.hashMerkleRoot == uint256S("0x1e657432e66fd0f5b2dfda198e0b177290c4b76ed1dd104313fd5070a4b66d19"));
-        printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
+        assert(consensus.hashGenesisBlock == uint256S("0x8caacd7c84d4c1935f753db494d46cb1f2295e98a0a5b029e128ab0486d8e57c"));
+        //printf("Genesis Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
+        assert(genesis.hashMerkleRoot == uint256S("0xf3d31a5c686b2d9bae272940c5cbd324115f3c9727166c141b3ee37bbeb86549"));
+        //printf("Genesis Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
 
@@ -432,7 +432,7 @@ public:
         checkpointData = {
            
             {
-                {0, uint256S("1e657432e66fd0f5b2dfda198e0b177290c4b76ed1dd104313fd5070a4b66d19")},
+                {0, uint256S("8caacd7c84d4c1935f753db494d46cb1f2295e98a0a5b029e128ab0486d8e57c")},
             }
             
         };
