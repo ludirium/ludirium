@@ -152,9 +152,9 @@ public:
 
         chainTxData = ChainTxData{
             // Data from RPC: getchaintxstats 4096 00000000000000000008a89e854d57e5667df88f1cdef6fde2fbca1de5b639ad
-            /* nTime    */ 1626697539,
-            /* nTxCount */ 656509474,
-            /* dTxRate  */ 2.424920418708139,
+            /* nTime    */ 0,
+            /* nTxCount */ 0,
+            /* dTxRate  */ 0,
         };
     }
 };
@@ -204,7 +204,7 @@ public:
         pchMessageStart[3] = 0x3b;
         nDefaultPort = 17333;
         nPruneAfterHeight = 1000;
-        m_assumed_blockchain_size = 40;
+        m_assumed_blockchain_size = 0;
         m_assumed_chain_state_size = 2;
 
         genesis = CreateGenesisBlock(1639256431, 618318567, 0x1d00ffff, 1, 50 * COIN);
@@ -274,9 +274,9 @@ public:
             m_assumed_chain_state_size = 0;
             chainTxData = ChainTxData{
                 // Data from RPC: getchaintxstats 4096 000000187d4440e5bff91488b700a140441e089a8aaea707414982460edbfe54
-                /* nTime    */ 1626696658,
-                /* nTxCount */ 387761,
-                /* dTxRate  */ 0.04035946932424404,
+                /* nTime    */ 0,
+                /* nTxCount */ 0,
+                /* dTxRate  */ 0,
             };
         } else {
             const auto signet_challenge = args.GetArgs("-signetchallenge");
