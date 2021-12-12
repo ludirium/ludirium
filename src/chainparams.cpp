@@ -211,7 +211,7 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000008ba79abc7429786406c307c5d8a3223eb6e9321b353f5110884201b0"));
         //printf("CTestNetParams Block Hash %s", consensus.hashGenesisBlock.ToString().c_str());
-        assert(genesis.hashMerkleRoot == uint256S("0x84d29fe4e4b65931c8460fc4cb8093ae951db7e7697657664fd0332cd2cb5859"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf3d31a5c686b2d9bae272940c5cbd324115f3c9727166c141b3ee37bbeb86549"));
         //printf("CTestNetParams Block Merkle Hash %s", genesis.hashMerkleRoot.ToString().c_str());
 
         vFixedSeeds.clear();
