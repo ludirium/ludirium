@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2010 Kenshin Nakamoto
+// Copyright (c) 2009-2010 Kenoshi Nakamoto
 // Copyright (c) 2009-2020 The Ludirium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -29,13 +29,13 @@ enum class FeeEstimateMode {
 class CFeeRate
 {
 private:
-    CAmount nKenshinsPerK; // unit is kenshins-per-1,000-bytes
+    CAmount nKenoshisPerK; // unit is kenshins-per-1,000-bytes
 
 public:
     /** Fee rate of 0 kenshins per kB */
-    CFeeRate() : nKenshinsPerK(0) { }
+    CFeeRate() : nKenoshisPerK(0) { }
     template<typename I>
-    explicit CFeeRate(const I _nKenshinsPerK): nKenshinsPerK(_nKenshinsPerK) {
+    explicit CFeeRate(const I _nKenoshisPerK): nKenoshisPerK(_nKenoshisPerK) {
         // We've previously had bugs creep in from silent double->int conversion...
         static_assert(std::is_integral<I>::value, "CFeeRate should be used without floats");
     }
@@ -54,16 +54,16 @@ public:
      * Return the fee in kenshins for a size of 1000 bytes
      */
     CAmount GetFeePerK() const { return GetFee(1000); }
-    friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nKenshinsPerK < b.nKenshinsPerK; }
-    friend bool operator>(const CFeeRate& a, const CFeeRate& b) { return a.nKenshinsPerK > b.nKenshinsPerK; }
-    friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nKenshinsPerK == b.nKenshinsPerK; }
-    friend bool operator<=(const CFeeRate& a, const CFeeRate& b) { return a.nKenshinsPerK <= b.nKenshinsPerK; }
-    friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nKenshinsPerK >= b.nKenshinsPerK; }
-    friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nKenshinsPerK != b.nKenshinsPerK; }
-    CFeeRate& operator+=(const CFeeRate& a) { nKenshinsPerK += a.nKenshinsPerK; return *this; }
+    friend bool operator<(const CFeeRate& a, const CFeeRate& b) { return a.nKenoshisPerK < b.nKenoshisPerK; }
+    friend bool operator>(const CFeeRate& a, const CFeeRate& b) { return a.nKenoshisPerK > b.nKenoshisPerK; }
+    friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nKenoshisPerK == b.nKenoshisPerK; }
+    friend bool operator<=(const CFeeRate& a, const CFeeRate& b) { return a.nKenoshisPerK <= b.nKenoshisPerK; }
+    friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nKenoshisPerK >= b.nKenoshisPerK; }
+    friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nKenoshisPerK != b.nKenoshisPerK; }
+    CFeeRate& operator+=(const CFeeRate& a) { nKenoshisPerK += a.nKenoshisPerK; return *this; }
     std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::LUDi_KVB) const;
 
-    SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nKenshinsPerK); }
+    SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nKenoshisPerK); }
 };
 
 #endif //  LUDIRIUM_POLICY_FEERATE_H

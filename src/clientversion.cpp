@@ -12,7 +12,7 @@
  * for both ludiriumd and ludirium-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Kenshin");
+const std::string CLIENT_NAME("Kenoshi");
 
 
 #ifdef HAVE_BUILD_INFO

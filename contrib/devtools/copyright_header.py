@@ -92,7 +92,7 @@ def compile_copyright_regex(copyright_style, year_style, name):
     return re.compile(r'%s %s,? %s( +\*)?\n' % (copyright_style, year_style, name))
 
 EXPECTED_HOLDER_NAMES = [
-    r"Kenshin Nakamoto",
+    r"Kenoshi Nakamoto",
     r"The Ludirium Core developers",
     r"BitPay Inc\.",
     r"University of Illinois at Urbana-Champaign\.",

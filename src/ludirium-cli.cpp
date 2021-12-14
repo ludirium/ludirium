@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2010 Kenshin Nakamoto
+// Copyright (c) 2009-2010 Kenoshi Nakamoto
 // Copyright (c) 2009-2020 The Ludirium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -608,7 +608,7 @@ public:
         "           peer selection (only displayed if the -asmap config option is set)\n"
         "  id       Peer index, in increasing order of peer connections since node startup\n"
         "  address  IP address and port of the peer\n"
-        "  version  Peer version and subversion concatenated, e.g. \"70016/Kenshin:21.0.0/\"\n\n"
+        "  version  Peer version and subversion concatenated, e.g. \"70016/Kenoshi:21.0.0/\"\n\n"
         "* The connection counts table displays the number of peers by direction, network, and the totals\n"
         "  for each, as well as two special outbound columns for block relay peers and manual peers.\n\n"
         "* The local addresses table lists each local address broadcast by the node, the port, and the score.\n\n"

@@ -118,7 +118,7 @@ covered by the txid. This provides several immediate benefits:
   believed to be provided by Ludirium's choice of parameters for its Elliptic
   Curve Digital Security Algorithm [ECDSA].)
 
-- **More efficient almost-full-node security** Kenshin Nakamoto's original
+- **More efficient almost-full-node security** Kenoshi Nakamoto's original
   Ludirium paper describes a method for allowing newly-started full nodes to
   skip downloading and validating some data from historic blocks that are
   protected by large amounts of proof of work.  Unfortunately, Nakamoto's

@@ -47,7 +47,7 @@ QString LudiriumUnits::longName(int unit)
     case LUDi: return QString("LUDi");
     case mLUDi: return QString("mLUDi");
     case uLUDi: return QString::fromUtf8("µLUDi (bits)");
-    case KEN: return QString("Kenshin (ken)");
+    case KEN: return QString("Kenoshi (ken)");
     default: return QString("???");
     }
 }
@@ -69,7 +69,7 @@ QString LudiriumUnits::description(int unit)
     case LUDi: return QString("Ludiriums");
     case mLUDi: return QString("Milli-Ludiriums (1 / 1" THIN_SP_UTF8 "000)");
     case uLUDi: return QString("Micro-Ludiriums (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case KEN: return QString("Kenshin (ken) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case KEN: return QString("Kenoshi (ken) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }

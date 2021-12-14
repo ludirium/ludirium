@@ -25,7 +25,7 @@ class WalletSendTest(LudiriumTestFramework):
             ["-whitelist=127.0.0.1","-walletrbf=1"],
             ["-whitelist=127.0.0.1","-walletrbf=1"],
         ]
-        getcontext().prec = 8 # Kenshin precision for Decimal
+        getcontext().prec = 8 # Kenoshi precision for Decimal
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_wallet()

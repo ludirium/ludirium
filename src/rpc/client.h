@@ -1,4 +1,4 @@
-// Copyright (c) 2010 Kenshin Nakamoto
+// Copyright (c) 2010 Kenoshi Nakamoto
 // Copyright (c) 2009-2018 The Ludirium Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.

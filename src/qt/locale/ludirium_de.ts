@@ -970,7 +970,7 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
     </message>
     <message>
         <source>Can vary +/- %1 kenshin(s) per input.</source>
-        <translation type="unfinished">Kann pro Eingabe um +/- %1 Kenshin(s) abweichen.</translation>
+        <translation type="unfinished">Kann pro Eingabe um +/- %1 Kenoshi(s) abweichen.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2653,7 +2653,7 @@ Für weitere Informationen über diese Konsole, tippe %6.
 Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 kenshins per kvB" for a transaction size of 500 virtual bytes (half of 1 kvB) would ultimately yield a fee of only 50 kenshins.</source>
         <translation type="unfinished">Gib manuell eine Gebühr pro kB (1.000 Bytes) der virtuellen Transaktionsgröße an.
 
-Hinweis: Da die Gebühr auf Basis der Bytes berechnet wird, führt eine Gebührenrate von "100 Kenshins per kvB" für eine Transaktion von 500 virtuellen Bytes (die Hälfte von 1 kvB) letztlich zu einer Gebühr von nur 50 Kenshins.</translation>
+Hinweis: Da die Gebühr auf Basis der Bytes berechnet wird, führt eine Gebührenrate von "100 Kenoshis per kvB" für eine Transaktion von 500 virtuellen Bytes (die Hälfte von 1 kvB) letztlich zu einer Gebühr von nur 50 Kenoshis.</translation>
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for ludirium transactions than the network can process.</source>

@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2010 Kenshin Nakamoto
+// Copyright (c) 2009-2010 Kenoshi Nakamoto
 // Copyright (c) 2009-2020 The Ludirium Core developers
 // Copyright (c) 2017 The Zcash developers
 // Distributed under the MIT software license, see the accompanying

@@ -1,4 +1,4 @@
-BIPs that are implemented by Ludirium Core (up-to-date up to **v22.0**):
+BIPs that are implemented by Ludirium Core (up-to-date up to **v02.0**):
 
 * [`BIP 9`](https://github.com/ludirium/bips/blob/master/bip-0009.mediawiki): The changes allowing multiple soft-forks to be deployed in parallel have been implemented since **v0.12.1**  ([PR #7575](https://github.com/ludirium/ludirium/pull/7575))
 * [`BIP 11`](https://github.com/ludirium/bips/blob/master/bip-0011.mediawiki): Multisig outputs are standard since **v0.6.0** ([PR #669](https://github.com/ludirium/ludirium/pull/669)).
@@ -56,4 +56,4 @@ BIPs that are implemented by Ludirium Core (up-to-date up to **v22.0**):
   leaves) are implemented as of **v0.21.0** ([PR 19953](https://github.com/ludirium/ludirium/pull/19953)),
   with mainnet activation as of **v0.21.1** ([PR 21377](https://github.com/ludirium/ludirium/pull/21377),
   [PR 21686](https://github.com/ludirium/ludirium/pull/21686)).
-* [`BIP 350`](https://github.com/ludirium/bips/blob/master/bip-0350.mediawiki): Addresses for native v1+ segregated Witness outputs use Bech32m instead of Bech32 as of **v22.0** ([PR 20861](https://github.com/ludirium/ludirium/pull/20861)).
+* [`BIP 350`](https://github.com/ludirium/bips/blob/master/bip-0350.mediawiki): Addresses for native v1+ segregated Witness outputs use Bech32m instead of Bech32 as of **v0.22.0** ([PR 20861](https://github.com/ludirium/ludirium/pull/20861)).
