@@ -54,7 +54,7 @@ public:
     };
 
     //! @name Static API
-    //! Unit conversion and formatting
+    //! Unit conversion aend formatting
     ///@{
 
     //! Get list of units, for drop-down box
